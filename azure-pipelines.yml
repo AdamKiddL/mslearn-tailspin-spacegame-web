@@ -37,6 +37,8 @@ steps:
   displayName: 'Write build info'
   workingDirectory: $(wwwrootDir)
 
+- bash: echo $variables['Build.Reason'] variables['System.PullRequest.TargetBranch']
+
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
   inputs:
